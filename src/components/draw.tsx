@@ -26,6 +26,7 @@ import {
   Settings,
   Grid3X3,
 } from "lucide-react";
+import Link from "next/link";
 
 interface Point {
   x: number;
@@ -860,12 +861,21 @@ const AdvancedWhiteboard: React.FC = () => {
       {/* Top Toolbar */}
       <div className="bg-white shadow-sm border-b border-gray-200 p-3 flex items-center justify-between gap-4">
         {/* Tool Selection */}
+
         <div className="flex items-center bg-gray-100 rounded-lg p-1">
+          <div>
+            <Link
+              href={"/"}
+              className="text-black font-semibold mr-2 border-1 p-2 rounded-2xl"
+            >
+              Go Home
+            </Link>
+          </div>
           {TOOLS.map((tool) => (
             <button
               key={tool.id}
               onClick={() => setCurrentTool(tool.id)}
-              className={`p-2 rounded-md transition-all ${
+              className={`p-2 rounded-md transition-all  ${
                 currentTool === tool.id
                   ? "bg-blue-500 text-white shadow-sm"
                   : "text-gray-600 hover:bg-gray-200"
