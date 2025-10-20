@@ -31,6 +31,7 @@ import {
   Palette,
 } from "lucide-react";
 import Link from "next/link";
+import * as monaco from "@monaco-editor/react";
 
 const defaultTemplates: Record<string, string> = {
   python: `# Python Code Editor
@@ -330,7 +331,7 @@ export default function EditorPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 flex flex-col gap-4 ">
       {/* Header */}
-      <header className="flex justify-between items-center bg-gray-800/50 backdrop-blur-sm rounded-lg    border-2 border-gray-700">
+      <header className="flex justify-between items-center bg-gray-800/50 backdrop-blur-sm rounded-lg    border-1 border-gray-700 px-3">
         <div className="flex items-center gap-3">
           <span className="text-3xl">{getLanguageIcon()}</span>
           <div>
@@ -455,9 +456,9 @@ export default function EditorPage() {
         >
           <CardHeader className="pb-2 border-b border-gray-700">
             <CardTitle className="text-white flex items-center justify-between">
-              <span className="flex items-center gap-2">
-                <FileCode className="w-5 h-5" />
-                Code Editor
+              <span className="flex items-center gap-2 font-mono text-sm">
+                <FileCode className="w-5 h-5 " />
+                {language}
               </span>
               {errors.length > 0 && (
                 <span className="text-sm text-yellow-400 flex items-center gap-1">
