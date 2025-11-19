@@ -9,7 +9,7 @@ export default function HomeLayout({
   return (
     <div>
       <Navbar />
-      {children}
+      <div className="pt-16">{children}</div>
     </div>
   );
 }

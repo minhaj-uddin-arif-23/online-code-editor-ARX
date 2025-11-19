@@ -13,6 +13,22 @@ const languageMap: Record<string, number> = {
   go: 60,
   php: 68,
   ruby: 72,
+  r: 80,
+  typescript: 74,
+  csharp: 51,
+  rust: 73,
+  kotlin: 78,
+  swift: 83,
+  perl: 79,
+  assembly: 45,
+  elixir: 87,
+  sql: 86,
+  dart: 85,
+  lua: 82,
+  scala: 81,
+  objective_c: 84,
+  haskell: 61,
+  bash: 46,
 };
 
 export async function POST(req: Request) {

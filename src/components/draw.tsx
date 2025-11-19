@@ -857,7 +857,7 @@ const AdvancedWhiteboard: React.FC = () => {
   }, [undo, redo]);
 
   return (
-    <div className="w-full h-screen bg-gray-50 flex flex-col overflow-hidden">
+    <div className="w-full min-h-screen bg-gray-50 flex flex-col overflow-hidden">
       {/* Top Toolbar */}
       <div className="bg-white shadow-sm border-b border-gray-200 p-3 flex items-center justify-between gap-4">
         {/* Tool Selection */}

@@ -34,93 +34,136 @@ import Link from "next/link";
 import * as monaco from "@monaco-editor/react";
 
 const defaultTemplates: Record<string, string> = {
-  python: `# Python Code Editor
-def greet(name):
-    """Greet a person by name"""
-    return f"Hello, {name}!"
+  python: `# Write your Python Code here
+print("Hello World")`,
 
-# Main execution
-if __name__ == "__main__":
-    message = greet("World")
-    print(message)
-    
-    # Example: List comprehension
-    numbers = [x**2 for x in range(1, 6)]
-    print("Squares:", numbers)`,
+  javascript: `// JavaScript Code Editor
+console.log("Hello World");`,
 
-  cpp: `#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
+  typescript: `// TypeScript Code Editor
+let your_name : string = "Rahim"
+console.log(your_name);`,
 
-// Function to greet
-string greet(string name) {
-    return "Hello, " + name + "!";
-}
+  java: `// Java Code Editor
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}`,
+
+  c: `// C Code Editor
+#include <stdio.h>
 
 int main() {
-    cout << greet("World") << endl;
-    
-    // Example: Vector usage
-    vector<int> numbers = {1, 2, 3, 4, 5};
-    cout << "Numbers: ";
-    for(int num : numbers) {
-        cout << num << " ";
-    }
-    cout << endl;
-    
+    printf("Hello World\\n");
     return 0;
 }`,
 
-  javascript: `// JavaScript Code Editor
-function greet(name) {
-    return \`Hello, \${name}!\`;
-}
+  cpp: `// C++ Code Editor
+#include <iostream>
+using namespace std;
 
-// Main execution
-console.log(greet("World"));
+int main() {
+    cout << "Hello World" << endl;
+    return 0;
+}`,
 
-// Example: Array operations
-const numbers = [1, 2, 3, 4, 5];
-const squares = numbers.map(x => x ** 2);
-console.log("Squares:", squares);
+  csharp: `// C# Code Editor
+using System;
 
-// Example: Async operation
-setTimeout(() => {
-    console.log("Async operation completed!");
-}, 1000);`,
-
-  java: `public class Main {
-    // Method to greet
-    public static String greet(String name) {
-        return "Hello, " + name + "!";
-    }
-    
-    public static void main(String[] args) {
-        System.out.println(greet("World"));
-        
-        // Example: Array operations
-        int[] numbers = {1, 2, 3, 4, 5};
-        System.out.print("Numbers: ");
-        for (int num : numbers) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
+class Program {
+    static void Main() {
+        Console.WriteLine("Hello World");
     }
 }`,
 
-  typescript: `// TypeScript Code Editor
-interface Person {
-    name: string;
-    age: number;
-}
+  go: `// Go Code Editor
+package main
 
-function greet(person: Person): string {
-    return \`Hello, \${person.name}! You are \${person.age} years old.\`;
-}
+import "fmt"
 
-const user: Person = { name: "World", age: 25 };
-console.log(greet(user));`,
+func main() {
+    fmt.Println("Hello World")
+}`,
+
+  rust: `// Rust Code Editor
+fn main() {
+    println!("Hello World");
+}`,
+
+  kotlin: `// Kotlin Code Editor
+fun main() {
+    println("Hello World")
+}`,
+
+  swift: `// Swift Code Editor
+print("Hello World")`,
+
+  php: `<?php
+// PHP Code Editor
+echo "Hello World";`,
+
+  ruby: `# Ruby Code Editor
+puts "Hello World"`,
+
+  perl: `# Perl Code Editor
+print "Hello World\\n";`,
+
+  r: `# R Code Editor
+print("Hello World")`,
+
+  scala: `// Scala Code Editor
+object Main extends App {
+  println("Hello World")
+}`,
+
+  lua: `-- Lua Code Editor
+print("Hello World")`,
+
+  haskell: `-- Haskell Code Editor
+main = putStrLn "Hello World"`,
+
+  bash: `# Bash Script
+echo "Hello World"`,
+
+  objective_c: `// Objective-C Code Editor
+#import <Foundation/Foundation.h>
+
+int main() {
+    @autoreleasepool {
+        NSLog(@"Hello World");
+    }
+    return 0;
+}`,
+
+  dart: `// Dart Code Editor
+void main() {
+  print('Hello World');
+}`,
+
+  sql: `-- SQL Editor Example
+SELECT 'Hello World' AS Greeting;`,
+
+  elixir: `# Elixir Code Editor
+IO.puts("Hello World")`,
+
+  assembly: `; Assembly (x86 NASM) Example
+section .data
+    msg db 'Hello World',0Ah
+    len equ $ - msg
+
+section .text
+    global _start
+
+_start:
+    mov edx,len
+    mov ecx,msg
+    mov ebx,1
+    mov eax,4
+    int 0x80
+
+    mov eax,1
+    int 0x80`,
 };
 
 // Available themes
@@ -159,7 +202,7 @@ export default function EditorPage() {
   );
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
   const [theme, setTheme] = useState("vs-dark");
-  const [fontSize, setFontSize] = useState(14);
+  const [fontSize, setFontSize] = useState(16);
   const editorRef = useRef<editor.IStandaloneCodeEditor | null>(null);
 
   const handleEditorMount: OnMount = (editorInstance, monacoInstance) => {
@@ -329,9 +372,9 @@ export default function EditorPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 flex flex-col gap-4 ">
+    <main className="min-h-screen bg-black p-4 flex flex-col gap-4 ">
       {/* Header */}
-      <header className="flex justify-between items-center bg-gray-800/50 backdrop-blur-sm rounded-lg    border-1 border-gray-700 px-3">
+      <header className="flex justify-between items-center bg-black backdrop-blur-sm rounded-lg    border border-black px-3">
         <div className="flex items-center gap-3">
           <span className="text-3xl">{getLanguageIcon()}</span>
           <div>
@@ -351,7 +394,7 @@ export default function EditorPage() {
           <div className="flex items-center gap-2">
             <Palette className="w-4 h-4 text-gray-400" />
             <Select value={theme} onValueChange={handleThemeChange}>
-              <SelectTrigger className="w-[160px] bg-gray-700 border-gray-600 text-white">
+              <SelectTrigger className="w-40 bg-gray-700 border-gray-600 text-white">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -653,10 +696,10 @@ export default function EditorPage() {
                               : "text-green-400"
                           }`}
                         >
-                          <span className="text-gray-500 text-xs mt-0.5 flex-shrink-0">
+                          <span className="text-gray-500 text-xs mt-0.5 shrink-0">
                             [{msg.timestamp}]
                           </span>
-                          <span className="font-bold flex-shrink-0">
+                          <span className="font-bold shrink-0">
                             {msg.type.toUpperCase()}:
                           </span>
                           <span className="break-all">{msg.message}</span>
@@ -697,7 +740,7 @@ export default function EditorPage() {
                           >
                             <div className="flex items-start gap-2">
                               <AlertCircle
-                                className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
+                                className={`w-5 h-5 mt-0.5 shrink-0 ${
                                   error.severity === 8
                                     ? "text-red-400"
                                     : "text-yellow-400"

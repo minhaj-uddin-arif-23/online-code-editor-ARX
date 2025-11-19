@@ -19,15 +19,15 @@ export const languages = [
   { name: "Lua", slug: "lua", id: 82 },
   { name: "Haskell", slug: "haskell", id: 61 },
   { name: "Shell Script", slug: "bash", id: 46 },
-  { name: "Objective-C", slug: "objective-c", id: 84 },
+  { name: "Objective-C", slug: "objective_c", id: 84 },
   { name: "Dart", slug: "dart", id: 85 },
   { name: "SQL", slug: "sql", id: 86 },
   { name: "Elixir", slug: "elixir", id: 87 },
   { name: "Assembly", slug: "assembly", id: 45 },
 ];
-//  ------------------------ Future work in-sha-allah
+//*  ------------------------ Future work in-sha-allah
 // export const databases = [
-//   // Relational
+//    Relational
 //   { name: "MySQL", type: "Relational" },
 //   { name: "PostgreSQL", type: "Relational" },
 //   { name: "SQLite", type: "Relational" },
@@ -35,7 +35,7 @@ export const languages = [
 //   { name: "Oracle Database", type: "Relational" },
 //   { name: "Microsoft SQL Server", type: "Relational" },
 
-//   // NoSQL
+//    NoSQL
 //   { name: "MongoDB", type: "Document (NoSQL)" },
 //   { name: "Cassandra", type: "Wide-Column (NoSQL)" },
 //   { name: "CouchDB", type: "Document (NoSQL)" },
