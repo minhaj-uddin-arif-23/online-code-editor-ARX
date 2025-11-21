@@ -81,7 +81,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 pt-24 px-4 sm:px-6 lg:px-8 pb-16">
+    <main className="min-h-screen bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 pt-24 px-4 sm:px-6 lg:px-8 pb-16">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
         <div className="text-center mb-16 pt-8">
