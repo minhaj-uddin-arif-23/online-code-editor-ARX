@@ -33,13 +33,13 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
       {/* Hero Section */}
       <motion.section
         style={{ opacity, scale }}
         className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-600/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-b from-blue-600/10 to-transparent pointer-events-none" />
         <div className="absolute inset-0 overflow-hidden">
           {particles.map((particle, i) => (
             <motion.div
@@ -75,7 +75,7 @@ export default function AboutUs() {
             >
               <Code2 className="w-20 h-20 mx-auto text-blue-400" />
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               About CodeSpace
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -249,7 +249,7 @@ export default function AboutUs() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-2xl transition-shadow"
+              className="bg-linear-to-r from-blue-500 to-purple-600 px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-2xl transition-shadow"
             >
               Get Started Free
             </motion.button>
@@ -288,7 +288,7 @@ function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true }}
       whileHover={{ y: -8, transition: { duration: 0.3 } }}
-      className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 hover:border-blue-500/50 transition-colors"
+      className="bg-linear-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 hover:border-blue-500/50 transition-colors"
     >
       <div className="text-blue-400 mb-4">{icon}</div>
       <h3 className="text-2xl font-bold mb-3">{title}</h3>

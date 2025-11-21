@@ -92,7 +92,7 @@ export default function HomePage() {
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white">
               Welcome to{" "}
-              <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
+              <span className="bg-linear-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
                 CompileX
               </span>
             </h1>
@@ -138,20 +138,20 @@ export default function HomePage() {
           {languages.map((lang, index) => (
             <a key={lang.slug} href={`/editor/${lang.slug}`} className="block">
               <div
-                className="group relative bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 hover:border-indigo-500 transition-all duration-300 h-full min-h-[120px] flex items-center justify-center overflow-hidden cursor-pointer transform hover:scale-105 hover:-translate-y-1 animate-card-in"
+                className="group relative bg-linear-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 hover:border-indigo-500 transition-all duration-300 h-full min-h-[120px] flex items-center justify-center overflow-hidden cursor-pointer transform hover:scale-105 hover:-translate-y-1 animate-card-in"
                 style={{ animationDelay: `${index * 30}ms` }}
               >
                 {/* Background Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 to-purple-500/0 group-hover:from-indigo-500/10 group-hover:to-purple-500/10 transition-all duration-300" />
+                <div className="absolute inset-0 bg-linear-to-br from-indigo-500/0 to-purple-500/0 group-hover:from-indigo-500/10 group-hover:to-purple-500/10 transition-all duration-300" />
 
                 {/* Shine Effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 </div>
 
                 <div className="relative flex flex-col items-center justify-center space-y-3 w-full p-4">
                   {/* Icon */}
-                  <div className="flex-shrink-0 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
+                  <div className="shrink-0 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
                     {languageIcons[lang.slug.toLowerCase()] || (
                       <FileText className="w-6 h-6 text-gray-400" />
                     )}
@@ -174,7 +174,7 @@ export default function HomePage() {
 
         {/* CTA Section */}
         <div className="text-center mt-16 animate-fade-in-delay-4">
-          <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl p-8 md:p-12 border border-gray-700 shadow-2xl hover:border-indigo-500/50 transition-all duration-500">
+          <div className="bg-linear-to-r from-gray-800 to-gray-900 rounded-3xl p-8 md:p-12 border border-gray-700 shadow-2xl hover:border-indigo-500/50 transition-all duration-500">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Ready to Start Coding?
             </h3>
@@ -185,10 +185,10 @@ export default function HomePage() {
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <a
                 href="/editor/python"
-                className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-semibold text-white shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105 relative overflow-hidden group inline-block"
+                className="px-8 py-3 bg-linear-to-r from-indigo-600 to-purple-600 rounded-full font-semibold text-white shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105 relative overflow-hidden group inline-block"
               >
                 <span className="relative z-10">Start with Python</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="absolute inset-0 bg-linear-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
               <a
                 href="/tutorials"

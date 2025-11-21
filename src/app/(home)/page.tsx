@@ -1,5 +1,5 @@
 // import Chat from "@/components/chat/chat";
-import Chat from "@/components/chat/chat";
+// import Chat from "@/components/chat/chat";
 import Homepage from "@/components/Homepage";
 import MobileApps from "@/components/shared/avilable";
 import FeaturesSection from "@/components/shared/feature_section";
@@ -17,7 +17,7 @@ export default function Home() {
         <FeatureContent />
         <MobileApps />
         <Footer />
-        <Chat />
+        {/* <Chat /> */}
       </div>
     </div>
   );

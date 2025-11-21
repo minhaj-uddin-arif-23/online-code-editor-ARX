@@ -18,7 +18,7 @@ export default function BecomeApro() {
   }, [user]);
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white px-6">
+    <section className="relative flex flex-col items-center justify-center min-h-screen bg-linear-to-b from-gray-900 to-gray-800 text-white px-6">
       {/* ---------- POPUP MODAL ---------- */}
       {showPopup && !user && (
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50">

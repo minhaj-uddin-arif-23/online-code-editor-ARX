@@ -866,7 +866,7 @@ const AdvancedWhiteboard: React.FC = () => {
           <div>
             <Link
               href={"/"}
-              className="text-black font-semibold mr-2 border-1 p-2 rounded-2xl"
+              className="text-black font-semibold mr-2 border p-2 rounded-2xl"
             >
               Go Home
             </Link>
@@ -1034,7 +1034,7 @@ const AdvancedWhiteboard: React.FC = () => {
             >
               <ZoomOut size={16} />
             </button>
-            <span className="px-2 text-sm  min-w-[3rem] text-center text-black font-medium">
+            <span className="px-2 text-sm  min-w-12 text-center text-black font-medium">
               {Math.round(viewState.transform.scale * 100)}%
             </span>
             <button
@@ -1170,7 +1170,7 @@ const AdvancedWhiteboard: React.FC = () => {
                 Start drawing with the tools above. Features include:
               </p>
               <div className="text-sm text-gray-500 space-y-1">
-                <p>• Smooth pen & eraser tools</p>
+                <p>• Smooth pen | eraser tools</p>
                 <p>• Shape tools (rectangle, circle, arrow)</p>
                 <p>• Zoom & pan (Ctrl+wheel, middle mouse)</p>
                 <p>• Undo/Redo (Ctrl+Z/Ctrl+Y)</p>

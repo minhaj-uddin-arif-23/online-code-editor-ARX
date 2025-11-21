@@ -35,7 +35,7 @@ export default function Tutorial() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 px-6 py-12">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 px-6 py-12">
       <h1 className="text-3xl md:text-4xl font-bold mb-10 text-center text-white">
         <span className="inline-flex items-center gap-2">
           <Code className="w-7 h-7 text-indigo-400" />
