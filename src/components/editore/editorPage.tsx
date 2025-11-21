@@ -188,6 +188,7 @@ interface ExecutionResult {
 }
 
 export default function EditorPage() {
+  const [codes, setCodes] = useState("");
   const params = useParams();
   const language = params?.language as string;
   const [code, setCode] = useState("");
@@ -380,7 +381,7 @@ export default function EditorPage() {
           <div>
             <Link
               href={"/"}
-              className="text-2xl font-bold text-black capitalize"
+              className="text-2xl font-bold text-white capitalize"
             >
               CompileX
             </Link>

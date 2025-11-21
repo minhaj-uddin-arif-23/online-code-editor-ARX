@@ -44,6 +44,7 @@ export default function Navbar({ user }: NavbarProps) {
     { href: "/tutorials", label: "Tutorials" },
     { href: "/whiteboard", label: "Whiteboard" },
     { href: "/dashboard", label: "Dashboard" },
+    { href: "/problems", label: "Problem" },
     { href: "/about", label: "About" },
     { href: "/career", label: "Career" },
   ];
@@ -126,7 +127,11 @@ export default function Navbar({ user }: NavbarProps) {
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md hover:bg-gray-700 transition-all duration-300"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? (
+                <X size={24} className="text-white" />
+              ) : (
+                <Menu size={24} className="text-white" />
+              )}
             </button>
           </div>
         </div>
