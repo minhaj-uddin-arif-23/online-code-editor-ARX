@@ -380,7 +380,7 @@ export default function EditorPage() {
           <div>
             <Link
               href={"/"}
-              className="text-2xl font-bold text-white capitalize"
+              className="text-2xl font-bold text-black capitalize"
             >
               CompileX
             </Link>

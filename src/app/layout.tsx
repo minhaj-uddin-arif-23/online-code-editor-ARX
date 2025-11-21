@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { StackProvider, StackTheme } from "@stackframe/stack";
+import { stackClientApp } from "../stack/client";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -7,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: "Compile X",
   description: "This is a coding editor projects",
 };
 
@@ -22,7 +24,9 @@ export default function RootLayout({
         cz-shortcut-listen="true"
         className={`${inter.className} antialiased `}
       >
-        {children}
+        <StackProvider app={stackClientApp}>
+          <StackTheme>{children}</StackTheme>
+        </StackProvider>
       </body>
     </html>
   );
