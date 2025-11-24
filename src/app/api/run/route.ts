@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
-
+// * All processing done this judgeo url throw api , ak kotai aikan teke problem execution th hocce
 const JUDGE0_URL =
   "https://judge0-ce.p.rapidapi.com/submissions?base64_encoded=false&wait=true";
 

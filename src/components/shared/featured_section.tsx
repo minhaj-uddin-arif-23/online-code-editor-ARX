@@ -3,19 +3,40 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Code2, Zap, Star, Rocket } from "lucide-react";
+import {
+  Code2,
+  Zap,
+  Star,
+  Rocket,
+  Server,
+  Globe,
+  Shield,
+  Crown,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useUser } from "@stackframe/stack";
 
 export default function BecomeApro() {
-  const user: any = useUser(); // get logged-in user
+  const user: any = useUser();
+  const router = useRouter();
+
   const [showPopup, setShowPopup] = useState(false);
 
-  // show popup automatically if user is NOT logged in
+  // Show popup if NOT logged in
   useEffect(() => {
     if (!user) {
       setShowPopup(true);
     }
   }, [user]);
+
+  // Redirect to subscriptions page when clicking button
+  const handleSubscribeClick = () => {
+    if (!user) {
+      setShowPopup(true);
+      return;
+    }
+    router.push("/subscriptions");
+  };
 
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen bg-linear-to-b from-gray-900 to-gray-800 text-white px-6">
@@ -33,8 +54,7 @@ export default function BecomeApro() {
             </h2>
 
             <p className="text-gray-400 mb-6">
-              Log in or sign up to unlock your personalized code editor
-              experience.
+              Login or sign up to unlock full premium access.
             </p>
 
             <div className="flex justify-center gap-4 mb-4">
@@ -64,7 +84,6 @@ export default function BecomeApro() {
       )}
       {/* ---------- POPUP MODAL ---------- */}
 
-      {/* Rest of your page content */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -80,32 +99,69 @@ export default function BecomeApro() {
         transition={{ delay: 0.2 }}
         className="text-gray-300 mb-10 text-center max-w-xl"
       >
-        Take your coding experience to the next level with advanced tools, AI
-        suggestions, cloud sync, and real-time collaboration.
+        Upgrade to Pro and access premium tools, advanced AI, global compiler
+        support, unlimited cloud storage, and more.
       </motion.p>
 
+      {/* ---------- FEATURE CARDS ---------- */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         <FeatureCard
           icon={<Code2 className="w-10 h-10 text-blue-400" />}
           title="Smart Code Editor"
-          desc="Auto-completion, syntax highlighting, and instant debugging."
+          desc="Auto-complete, error detection, and real-time hints."
         />
+
         <FeatureCard
           icon={<Zap className="w-10 h-10 text-yellow-400" />}
-          title="AI Assistance"
-          desc="Get intelligent code suggestions powered by AI."
+          title="AI Code Generation"
+          desc="Generate code, fix bugs, and optimize like a pro."
         />
+
         <FeatureCard
           icon={<Star className="w-10 h-10 text-green-400" />}
           title="Cloud Sync"
-          desc="Access your projects anywhere with secure cloud backup."
+          desc="Save projects securely and access from anywhere."
         />
+
+        <FeatureCard
+          icon={<Server className="w-10 h-10 text-purple-400" />}
+          title="Unlimited Execution"
+          desc="Run any code language with fast server execution."
+        />
+
+        <FeatureCard
+          icon={<Globe className="w-10 h-10 text-orange-400" />}
+          title="Global Compile Nodes"
+          desc="Super low-latency compilers deployed worldwide."
+        />
+
+        <FeatureCard
+          icon={<Shield className="w-10 h-10 text-red-400" />}
+          title="Secure Cloud Storage"
+          desc="Encrypted storage with version control."
+        />
+
         <FeatureCard
           icon={<Rocket className="w-10 h-10 text-pink-400" />}
-          title="Pro Performance"
-          desc="Lightning-fast execution and optimized rendering."
+          title="Boosted Performance"
+          desc="Faster builds, faster responses, faster everything."
+        />
+
+        <FeatureCard
+          icon={<Crown className="w-10 h-10 text-yellow-300" />}
+          title="Early Access Features"
+          desc="Be first to try experimental features & updates."
         />
       </div>
+
+      {/* ---------- SUBSCRIBE BUTTON ---------- */}
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        onClick={handleSubscribeClick}
+        className="px-10 py-3 bg-blue-600 hover:bg-blue-700 text-lg font-semibold rounded-xl transition shadow-lg shadow-blue-500/20 cursor-pointer"
+      >
+        Upgrade Now → Pro Subscription
+      </motion.button>
     </section>
   );
 }
