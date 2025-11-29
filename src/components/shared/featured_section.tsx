@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -92,7 +93,6 @@ export default function BecomeApro() {
       >
         Unlock <span className="text-blue-400">Pro Features</span>
       </motion.h1>
-
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -102,14 +102,35 @@ export default function BecomeApro() {
         Upgrade to Pro and access premium tools, advanced AI, global compiler
         support, unlimited cloud storage, and more.
       </motion.p>
+      {/* ---------- SUBSCRIBE BUTTON ---------- */}
+      <div className="flex space-x-2 my-6">
+        <Link href={"/bkash-payment"}>
+          {" "}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="my-3 px-10 py-3 bg-pink-700 hover:bg-pink-600 text-lg font-semibold rounded-xl transition shadow-lg shadow-blue-500/20 cursor-pointer"
+          >
+            Bkash
+          </motion.button>
+        </Link>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          onClick={handleSubscribeClick}
+          className=" my-3 px-10 py-3 bg-blue-600 hover:bg-blue-700 text-lg font-semibold rounded-xl transition shadow-lg shadow-blue-500/20 cursor-pointer"
+        >
+          Card Payment
+        </motion.button>
+      </div>
 
       {/* ---------- FEATURE CARDS ---------- */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        <FeatureCard
-          icon={<Code2 className="w-10 h-10 text-blue-400" />}
-          title="Smart Code Editor"
-          desc="Auto-complete, error detection, and real-time hints."
-        />
+        <Link href={"/smartcodeEdior"}>
+          <FeatureCard
+            icon={<Code2 className="w-10 h-10 text-blue-400" />}
+            title="Smart Code Editor"
+            desc="Auto-complete, error detection, and real-time hints."
+          />
+        </Link>
 
         <FeatureCard
           icon={<Zap className="w-10 h-10 text-yellow-400" />}
@@ -153,15 +174,6 @@ export default function BecomeApro() {
           desc="Be first to try experimental features & updates."
         />
       </div>
-
-      {/* ---------- SUBSCRIBE BUTTON ---------- */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        onClick={handleSubscribeClick}
-        className="px-10 py-3 bg-blue-600 hover:bg-blue-700 text-lg font-semibold rounded-xl transition shadow-lg shadow-blue-500/20 cursor-pointer"
-      >
-        Upgrade Now → Pro Subscription
-      </motion.button>
     </section>
   );
 }

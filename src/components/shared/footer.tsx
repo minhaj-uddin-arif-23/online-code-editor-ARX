@@ -268,7 +268,8 @@ export default function Footer() {
           className="text-sm text-gray-500"
         >
           © {new Date().getFullYear()} CodeSphere — Crafted with ❤️ by{" "}
-          <span className="text-blue-400 font-medium">Minhaj Uddin Arif</span>.
+          {/* Minhaj Uddin Arif */}
+          <span className="text-blue-400 font-medium"> Minhaj Uddin Arif</span>.
           All rights reserved.
         </motion.p>
       </div>
